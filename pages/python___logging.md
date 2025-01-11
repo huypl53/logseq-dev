@@ -1,4 +1,13 @@
 - module level logger with `getLogger(__name__)`
 -
 - ## hierarchical logging
-	- Logged messages to the module-level logger get forwarded to handlers of loggers in higher-level modules, all the way up to the highest-level logger known as the root logger; this approach is known as
+	- Logged messages to the module-level logger **get forwarded to handlers of loggers in higher-level modules**, all the way up to the highest-level logger known as the **root logger**; this approach is known as
+-
+- log **records** (created by loggers) are sent to destinations specified by **handlers**
+-
+- if be **not specified handler**, module logger will **propagate log record** to root logger's handler
+-
+- ## Q&A
+	- how to get **root logger**?
+		- **basicConfig()** provides a quick way to configure the root logger that handles many use cases
+	-
